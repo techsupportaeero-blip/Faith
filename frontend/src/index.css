@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A2540;
+  --color-navy-deep: #061829;
+  --color-navy-soft: #1E4A7F;
+  --color-gold: #C8A24A;
+  --color-gold-light: #E6C97A;
+  --color-gold-dark: #9B7A2E;
+  --color-cream: #FBF7EF;
+  --color-cream-warm: #F3EBD8;
+  --color-sky: #3B82C4;
+  --color-ink: #0B1B2E;
+  --font-serif: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+html, body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, .font-serif { font-family: var(--font-serif); font-optical-sizing: auto; }
+
+/* Custom decorative underline */
+.gold-underline {
+  background-image: linear-gradient(90deg, #C8A24A 0%, #E6C97A 50%, #C8A24A 100%);
+  height: 3px;
+  width: 64px;
+  border-radius: 2px;
+}
+
+/* Grain texture overlay */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(10,37,64,0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Fancy scroll bar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #F3EBD8; }
+::-webkit-scrollbar-thumb { background: #0A2540; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #C8A24A; }
+
+/* WhatsApp pulse */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
+  70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.wa-pulse { animation: wa-pulse 2s infinite; }
+
+/* Ken burns for hero */
+@keyframes kenburns {
+  0% { transform: scale(1.05) translate(0,0); }
+  100% { transform: scale(1.18) translate(-1.5%, -1%); }
+}
+.kenburns { animation: kenburns 18s ease-in-out infinite alternate; }
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 40s linear infinite; }
+
+/* Shimmer for stat numbers */
+@keyframes shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shine-text {
+  background: linear-gradient(90deg, #C8A24A 0%, #E6C97A 40%, #FBF7EF 50%, #E6C97A 60%, #C8A24A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+/* Card lift */
+.lift { transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; }
+.lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -20px rgba(10,37,64,0.35); }
+
+/* Ornamental divider */
+.ornament {
+  display: inline-flex; align-items: center; gap: .75rem;
+  color: #C8A24A; letter-spacing: .3em; font-size: .75rem; text-transform: uppercase;
+}
+.ornament::before, .ornament::after {
+  content: ''; height: 1px; width: 32px; background: currentColor; opacity: .6;
+}
+
+/* Focus ring */
+:focus-visible { outline: 2px solid #C8A24A; outline-offset: 2px; border-radius: 4px; }
