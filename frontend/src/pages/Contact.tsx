@@ -69,7 +69,7 @@ export default function Contact() {
               <h3 className="font-serif text-2xl mb-6">Reach us directly</h3>
               <ul className="space-y-5">
                 <InfoRow icon={MapPin} title="Head Office">147/2, Opposite A-Block, Bagdola Sector- 8,<br />Dwarka, New Delhi, 110077, India</InfoRow>
-                <InfoRow icon={Phone} title="Phone"><a href="tel:+919876543210" className="hover:text-gold">+91 831 973 3715</a></InfoRow>
+                <InfoRow icon={Phone} title="Phone"><a href="tel:+918319733715" className="hover:text-gold">+91 831 973 3715</a></InfoRow>
                 <InfoRow icon={Mail} title="Email"><a href="mailto:Info@faith.ac.in" className="hover:text-gold">Info@faith.ac.in</a></InfoRow>
                 <InfoRow icon={Globe} title="Website">www.faith.ac.in</InfoRow>
               </ul>

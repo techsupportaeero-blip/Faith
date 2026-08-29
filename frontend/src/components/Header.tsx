@@ -38,7 +38,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href="mailto:Info@faith.ac.in" className="hover:text-gold transition">Info@faith.ac.in</a>
-            <a href="tel:+919876543210" className="hover:text-gold transition">+91 831 973 3715</a>
+            <a href="tel:+918319733715" className="hover:text-gold transition">+91 831 973 3715</a>
           </div>
           <div className="flex items-center gap-3 tracking-widest uppercase">
             <span className="opacity-70">CSR Section-8 Company</span>
@@ -54,13 +54,9 @@ export default function Header() {
         transition={{ duration: 0.6 }}
         className={`sticky top-0 z-40 transition-all duration-500 ${scrolled ? 'bg-cream/95 backdrop-blur-lg shadow-[0_4px_30px_-15px_rgba(10,37,64,0.25)]' : 'bg-cream'}`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src="/images/faith-logo.png" alt="FAITH Foundation" className="h-14 w-auto" />
-            <div className="hidden lg:flex flex-col leading-none">
-              <span className="font-serif text-navy text-lg font-bold tracking-tight">FAITH</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-navy/60">Since 2015</span>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between min-h-[96px] md:min-h-[116px] py-3">
+          <Link to="/" className="flex items-center group">
+            <img src="/images/faith-logo.png" alt="FAITH Foundation" className="h-20 md:h-24 max-w-[340px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

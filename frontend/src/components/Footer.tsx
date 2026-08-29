@@ -97,7 +97,7 @@ export default function Footer() {
             <h4 className="font-serif text-gold mb-5 text-lg">Reach Out</h4>
             <ul className="space-y-4 text-sm text-cream/80">
               <li className="flex gap-3"><MapPin className="w-4 h-4 mt-1 text-gold shrink-0" /><span>147/2, Opposite A-Block, Bagdola Sector- 8,<br />Dwarka, New Delhi, 110077, India</span></li>
-              <li className="flex gap-3"><Phone className="w-4 h-4 mt-1 text-gold shrink-0" /><a href="tel:+919876543210" className="hover:text-gold transition">+91 831 973 3715</a></li>
+              <li className="flex gap-3"><Phone className="w-4 h-4 mt-1 text-gold shrink-0" /><a href="tel:+918319733715" className="hover:text-gold transition">+91 831 973 3715</a></li>
               <li className="flex gap-3"><Mail className="w-4 h-4 mt-1 text-gold shrink-0" /><a href="mailto:Info@faith.ac.in" className="hover:text-gold transition">Info@faith.ac.in</a></li>
               <li className="flex gap-3"><Globe className="w-4 h-4 mt-1 text-gold shrink-0" /><span>www.faith.ac.in</span></li>
             </ul>
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-cream/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-cream/50">
-          <p>© {new Date().getFullYear()} FAITH Foundation. All rights reserved. CIN: U85300KA2015NPL000000</p>
+          <p>© {new Date().getFullYear()} FAITH Foundation. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-gold transition">Privacy Policy</a>
             <a href="#" className="hover:text-gold transition">Terms</a>

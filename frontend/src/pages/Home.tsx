@@ -1,10 +1,52 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, GraduationCap, Cpu, Sparkles, HandHeart, Quote, BookOpen, Users, Award, Building2, Play } from 'lucide-react';
+import { ArrowRight, GraduationCap, Cpu, Sparkles, HandHeart, Quote, BookOpen, Users, Award, Building2, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import Counter from '../components/Counter';
 
+const testimonials = [
+  {
+    quote: "“FAITH gave my daughter a scholarship, a laptop and a mentor. Today she is the first engineer in our family. Their work does not stop at charity — they build futures.”",
+    initials: "RS",
+    name: "Rekha Suresh",
+    role: "Parent · Coimbatore",
+    image: "/images/library.jpg",
+  },
+  {
+    quote: "“Through FAITH's digital labs and foundational learning kits, our classroom attendance jumped by 40%. Students who once struggled with basic arithmetic are now coding interactive science models.”",
+    initials: "AN",
+    name: "Dr. Arvind Narayanan",
+    role: "Principal · Government Model School, Dharwad",
+    image: "/images/tech-education.jpg",
+  },
+  {
+    quote: "“Partnering with FAITH transformed our CSR footprint from fragmented donations into audited, high-impact community transformation with 100% ground-level governance.”",
+    initials: "MS",
+    name: "Meenakshi Sharma",
+    role: "CSR Head · Tech Enterprise Partner",
+    image: "/images/partnership.jpg",
+  },
+];
+
 export default function Home() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 6500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <>
       {/* HERO */}
@@ -25,7 +67,7 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-32 w-full">
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="ornament text-gold mb-6">
-            Section-8 CSR Foundation · Est. 2015
+            Section-8 CSR Foundation
           </motion.p>
 
           <motion.h1
@@ -132,7 +174,7 @@ export default function Home() {
               A foundation built on <em className="text-gold-dark">trust</em>, powered by <em className="text-gold-dark">purpose</em>.
             </h2>
             <p className="mt-6 text-navy/70 text-lg leading-relaxed">
-              Since 2015, FAITH has partnered with visionary corporates, educators and
+              FAITH has partnered with visionary corporates, educators and
               community leaders to design programs that break the cycle of inequity.
               We channel CSR investments into measurable outcomes — from primary literacy
               to advanced technology skilling and higher-education scholarships.
@@ -229,24 +271,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
+      {/* TESTIMONIAL CAROUSEL */}
       <section className="relative py-24 md:py-32 bg-navy-deep text-cream overflow-hidden">
-        <img src="/images/library.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-15" />
-        <div className="absolute inset-0 bg-navy-deep/70" />
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={testimonials[currentTestimonial].image}
+            src={testimonials[currentTestimonial].image}
+            alt=""
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-navy-deep/80" />
+        
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <Quote className="w-14 h-14 text-gold mx-auto mb-8" />
-          <Reveal>
-            <p className="font-serif text-2xl md:text-4xl italic leading-snug">
-              “FAITH gave my daughter a scholarship, a laptop and a mentor.
-              Today she is the first engineer in our family. Their work does not
-              stop at charity — they build futures.”
-            </p>
-          </Reveal>
-          <Reveal delay={0.15} className="mt-10 flex flex-col items-center">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center text-navy font-serif text-xl font-bold">RS</div>
-            <p className="mt-3 font-semibold">Rekha Suresh</p>
-            <p className="text-cream/60 text-sm">Parent · Coimbatore</p>
-          </Reveal>
+          <Quote className="w-12 h-12 md:w-14 md:h-14 text-gold mx-auto mb-8 opacity-80" />
+          
+          <div className="min-h-[220px] md:min-h-[170px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentTestimonial}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.45 }}
+                className="flex flex-col items-center"
+              >
+                <p className="font-serif text-xl md:text-3xl lg:text-4xl italic leading-snug">
+                  {testimonials[currentTestimonial].quote}
+                </p>
+                
+                <div className="mt-8 flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center text-navy font-serif text-xl font-bold shadow-lg">
+                    {testimonials[currentTestimonial].initials}
+                  </div>
+                  <p className="mt-3 font-semibold text-lg">{testimonials[currentTestimonial].name}</p>
+                  <p className="text-cream/60 text-sm">{testimonials[currentTestimonial].role}</p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Carousel Controls */}
+          <div className="mt-10 flex items-center justify-center gap-6">
+            <button
+              onClick={prevTestimonial}
+              aria-label="Previous story"
+              className="w-11 h-11 rounded-full border border-cream/20 flex items-center justify-center text-cream/80 hover:text-navy hover:bg-gold hover:border-gold transition-all duration-300 shadow-md"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentTestimonial(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`transition-all duration-300 rounded-full ${
+                    currentTestimonial === idx
+                      ? 'w-8 h-2.5 bg-gold'
+                      : 'w-2.5 h-2.5 bg-cream/30 hover:bg-cream/60'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextTestimonial}
+              aria-label="Next story"
+              className="w-11 h-11 rounded-full border border-cream/20 flex items-center justify-center text-cream/80 hover:text-navy hover:bg-gold hover:border-gold transition-all duration-300 shadow-md"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </section>
 
