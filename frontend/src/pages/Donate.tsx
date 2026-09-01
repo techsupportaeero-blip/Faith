@@ -174,9 +174,9 @@ export default function Donate() {
                 <p className="text-navy/70 text-sm mt-1">You can also donate via NEFT/RTGS.</p>
                 <div className="mt-4 text-sm text-navy/80 space-y-1">
                   <p><strong>A/C Name:</strong> FAITH Foundation</p>
-                  <p><strong>A/C No:</strong> 5010 1234 5678 90</p>
-                  <p><strong>IFSC:</strong> HDFC0000456</p>
-                  <p><strong>PAN:</strong> AAJCF1234K</p>
+                  <p><strong>A/C No:</strong> *************</p>
+                  <p><strong>IFSC:</strong> *************</p>
+                  <p><strong>PAN:</strong> *************</p>
                 </div>
                 <Link to="/contact" className="mt-5 inline-flex items-center gap-2 text-navy font-semibold border-b-2 border-gold pb-1">
                   Need help? Contact us <ArrowRight className="w-4 h-4" />

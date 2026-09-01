@@ -43,10 +43,10 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-6">
               {[
-                { icon: Facebook, url: '#', label: 'Facebook' },
-                { icon: Instagram, url: '#', label: 'Instagram' },
-                { icon: Linkedin, url: '#', label: 'LinkedIn' },
-                { icon: Twitter, url: '#', label: 'Twitter' },
+                { icon: Facebook, url: 'https://www.facebook.com/people/Faith-Foundation/61594149681867/', label: 'Facebook' },
+                { icon: Instagram, url: 'https://www.instagram.com/faithfoundation6876/', label: 'Instagram' },
+                { icon: Linkedin, url: 'https://www.linkedin.com/company/faith-foundation321/', label: 'LinkedIn' },
+                { icon: Twitter, url: 'https://x.com/FaithFoundmbqf', label: 'Twitter' },
                 { icon: Mail, url: 'mailto:#', label: 'Email' },
               ].map(({ icon: Icon, url, label }) => (
                 <a
@@ -98,7 +98,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-cream/80">
               <li className="flex gap-3"><MapPin className="w-4 h-4 mt-1 text-gold shrink-0" /><span>147/2, Opposite A-Block, Bagdola Sector- 8,<br />Dwarka, New Delhi, 110077, India</span></li>
               <li className="flex gap-3"><Phone className="w-4 h-4 mt-1 text-gold shrink-0" /><a href="tel:+918319733715" className="hover:text-gold transition">+91 831 973 3715</a></li>
-              <li className="flex gap-3"><Mail className="w-4 h-4 mt-1 text-gold shrink-0" /><a href="mailto:Info@faith.ac.in" className="hover:text-gold transition">Info@faith.ac.in</a></li>
+              <li className="flex gap-3"><Mail className="w-4 h-4 mt-1 text-gold shrink-0" /><a href="mailto:Info@faithfoundation.ac.in" className="hover:text-gold transition">Info@faithfoundation.ac.in</a></li>
               <li className="flex gap-3"><Globe className="w-4 h-4 mt-1 text-gold shrink-0" /><span>www.faith.ac.in</span></li>
             </ul>
           </div>

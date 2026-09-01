@@ -70,17 +70,17 @@ export default function Contact() {
               <ul className="space-y-5">
                 <InfoRow icon={MapPin} title="Head Office">147/2, Opposite A-Block, Bagdola Sector- 8,<br />Dwarka, New Delhi, 110077, India</InfoRow>
                 <InfoRow icon={Phone} title="Phone"><a href="tel:+918319733715" className="hover:text-gold">+91 831 973 3715</a></InfoRow>
-                <InfoRow icon={Mail} title="Email"><a href="mailto:Info@faith.ac.in" className="hover:text-gold">Info@faith.ac.in</a></InfoRow>
+                <InfoRow icon={Mail} title="Email"><a href="mailto:Info@faithfoundation.ac.in" className="hover:text-gold">Info@faithfoundation.ac.in</a></InfoRow>
                 <InfoRow icon={Globe} title="Website">www.faith.ac.in</InfoRow>
               </ul>
               <div className="mt-8 pt-6 border-t border-cream/10">
                 <p className="text-xs uppercase tracking-widest text-cream/60 mb-3">Follow the journey</p>
                 <div className="flex gap-3">
                   {[
-                    { icon: Facebook, url: '#' },
-                    { icon: Instagram, url: '#' },
-                    { icon: Linkedin, url: '#' },
-                    { icon: Twitter, url: '#' },
+                    { icon: Facebook, url: 'https://www.facebook.com/people/Faith-Foundation/61594149681867/' },
+                    { icon: Instagram, url: 'https://www.instagram.com/faithfoundation6876/' },
+                    { icon: Linkedin, url: 'https://www.linkedin.com/company/faith-foundation321/' },
+                    { icon: Twitter, url: 'https://x.com/FaithFoundmbqf' },
                     { icon: Mail, url: 'mailto:#' },
                   ].map(({ icon: Icon, url }, i) => (
                     <a key={i} href={url} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition">

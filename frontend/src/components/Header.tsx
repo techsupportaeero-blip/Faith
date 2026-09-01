@@ -37,7 +37,7 @@ export default function Header() {
       <div className="hidden md:block bg-navy text-cream/80 text-xs">
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="mailto:Info@faith.ac.in" className="hover:text-gold transition">Info@faith.ac.in</a>
+            <a href="mailto:Info@faithfoundation.ac.in" className="hover:text-gold transition">Info@faithfoundation.ac.in</a>
             <a href="tel:+918319733715" className="hover:text-gold transition">+91 831 973 3715</a>
           </div>
           <div className="flex items-center gap-3 tracking-widest uppercase">
